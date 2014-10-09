@@ -7,9 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+//#import <zipzap/zipzap.h>
+#import <XADMaster/XADArchive.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    IBOutlet NSImageView *dropper;
+    IBOutlet NSTextField *label;
+    IBOutlet NSProgressIndicator *ind;
+}
 
-
+- (void) addCover: (NSArray *) files;
 @end
 
+@interface NSImage(ProportionalScaling)
+- (NSImage*)imageByScalingProportionallyToSize:(NSSize)targetSize;
+@end
