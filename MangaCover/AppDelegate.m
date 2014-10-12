@@ -112,6 +112,9 @@ NSSize kSize = {512, 512};
     
     [marray sortUsingSelector:@selector(caseInsensitiveCompare:)];
     //NSLog(@"%@",marray[0]);
+    if (page >= [marray count]) {
+        page = (int)[marray count] - 1;
+    }
     
     for (int i = 0; i < [archive numberOfEntries]; ++i) {
         if ([[archive nameOfEntry:i] isEqualToString:marray[page]]) {
