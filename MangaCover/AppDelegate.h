@@ -7,16 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
-//#import <zipzap/zipzap.h>
 #import <XADMaster/XADArchive.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     IBOutlet NSImageView *dropper;
     IBOutlet NSTextField *label;
     IBOutlet NSProgressIndicator *ind;
+    IBOutlet NSTextField *number;
+    IBOutlet NSTextField *ordinal;
+    IBOutlet NSMenuItem *pref;
+    IBOutlet NSWindow *prefWindow;
+    int page;
 }
 
 - (void) addCover: (NSArray *) files;
+- (IBAction)openPref:(id)sender;
+- (IBAction)endPref:(id)sender;
 @end
 
 @interface NSImage(ProportionalScaling)

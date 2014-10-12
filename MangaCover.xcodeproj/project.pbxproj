@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D033EC919EA256B00229CDB /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D033EC819EA256B00229CDB /* gear.png */; };
 		7DF5623B19E5FAC700981300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5623A19E5FAC700981300 /* main.m */; };
 		7DF5623E19E5FAC700981300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5623D19E5FAC700981300 /* AppDelegate.m */; };
 		7DF5624019E5FAC700981300 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF5623F19E5FAC700981300 /* Images.xcassets */; };
 		7DF5624319E5FAC700981300 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DF5624119E5FAC700981300 /* MainMenu.xib */; };
-		7DF5624F19E5FAC700981300 /* MangaCoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5624E19E5FAC700981300 /* MangaCoverTests.m */; };
 		7DF5625919E5FE3600981300 /* dropper.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF5625819E5FE3600981300 /* dropper.png */; };
 		7DF5625C19E5FF8B00981300 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5625B19E5FF8B00981300 /* DropView.m */; };
 		7DF562DE19E67DE800981300 /* UniversalDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF562DC19E67DE800981300 /* UniversalDetector.framework */; };
@@ -19,16 +19,6 @@
 		7DF562E019E67DE800981300 /* XADMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF562DD19E67DE800981300 /* XADMaster.framework */; };
 		7DF562E119E67DE800981300 /* XADMaster.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF562DD19E67DE800981300 /* XADMaster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7DF5624919E5FAC700981300 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF5622D19E5FAC700981300 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7DF5623419E5FAC700981300;
-			remoteInfo = MangaCover;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7DF562E219E67DE800981300 /* Embed Frameworks */ = {
@@ -46,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D033EC819EA256B00229CDB /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		7DF5623519E5FAC700981300 /* MangaCover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaCover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF5623919E5FAC700981300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DF5623A19E5FAC700981300 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,9 +44,6 @@
 		7DF5623D19E5FAC700981300 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DF5623F19E5FAC700981300 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7DF5624219E5FAC700981300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7DF5624819E5FAC700981300 /* MangaCoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangaCoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DF5624D19E5FAC700981300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DF5624E19E5FAC700981300 /* MangaCoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MangaCoverTests.m; sourceTree = "<group>"; };
 		7DF5625819E5FE3600981300 /* dropper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropper.png; sourceTree = "<group>"; };
 		7DF5625A19E5FF8B00981300 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
 		7DF5625B19E5FF8B00981300 /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
@@ -76,13 +64,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7DF5624519E5FAC700981300 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,7 +73,6 @@
 				7DF562DC19E67DE800981300 /* UniversalDetector.framework */,
 				7DF562DD19E67DE800981300 /* XADMaster.framework */,
 				7DF5623719E5FAC700981300 /* MangaCover */,
-				7DF5624B19E5FAC700981300 /* MangaCoverTests */,
 				7DF5623619E5FAC700981300 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				7DF5623519E5FAC700981300 /* MangaCover.app */,
-				7DF5624819E5FAC700981300 /* MangaCoverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,29 +102,13 @@
 		7DF5623819E5FAC700981300 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D033EC819EA256B00229CDB /* gear.png */,
 				7DF5626E19E626AC00981300 /* libz.dylib */,
 				7DF5626C19E6269D00981300 /* Foundation.framework */,
 				7DF5626A19E6269700981300 /* ApplicationServices.framework */,
 				7DF5625819E5FE3600981300 /* dropper.png */,
 				7DF5623919E5FAC700981300 /* Info.plist */,
 				7DF5623A19E5FAC700981300 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7DF5624B19E5FAC700981300 /* MangaCoverTests */ = {
-			isa = PBXGroup;
-			children = (
-				7DF5624E19E5FAC700981300 /* MangaCoverTests.m */,
-				7DF5624C19E5FAC700981300 /* Supporting Files */,
-			);
-			path = MangaCoverTests;
-			sourceTree = "<group>";
-		};
-		7DF5624C19E5FAC700981300 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7DF5624D19E5FAC700981300 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,24 +134,6 @@
 			productReference = 7DF5623519E5FAC700981300 /* MangaCover.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7DF5624719E5FAC700981300 /* MangaCoverTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7DF5625519E5FAC700981300 /* Build configuration list for PBXNativeTarget "MangaCoverTests" */;
-			buildPhases = (
-				7DF5624419E5FAC700981300 /* Sources */,
-				7DF5624519E5FAC700981300 /* Frameworks */,
-				7DF5624619E5FAC700981300 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7DF5624A19E5FAC700981300 /* PBXTargetDependency */,
-			);
-			name = MangaCoverTests;
-			productName = MangaCoverTests;
-			productReference = 7DF5624819E5FAC700981300 /* MangaCoverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +145,6 @@
 				TargetAttributes = {
 					7DF5623419E5FAC700981300 = {
 						CreatedOnToolsVersion = 6.0.1;
-					};
-					7DF5624719E5FAC700981300 = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = 7DF5623419E5FAC700981300;
 					};
 				};
 			};
@@ -221,7 +162,6 @@
 			projectRoot = "";
 			targets = (
 				7DF5623419E5FAC700981300 /* MangaCover */,
-				7DF5624719E5FAC700981300 /* MangaCoverTests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,14 +173,8 @@
 			files = (
 				7DF5625919E5FE3600981300 /* dropper.png in Resources */,
 				7DF5624019E5FAC700981300 /* Images.xcassets in Resources */,
+				7D033EC919EA256B00229CDB /* gear.png in Resources */,
 				7DF5624319E5FAC700981300 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7DF5624619E5FAC700981300 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,23 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7DF5624419E5FAC700981300 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7DF5624F19E5FAC700981300 /* MangaCoverTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7DF5624A19E5FAC700981300 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7DF5623419E5FAC700981300 /* MangaCover */;
-			targetProxy = 7DF5624919E5FAC700981300 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7DF5624119E5FAC700981300 /* MainMenu.xib */ = {
@@ -403,42 +321,6 @@
 			};
 			name = Release;
 		};
-		7DF5625619E5FAC700981300 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MangaCoverTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MangaCover.app/Contents/MacOS/MangaCover";
-			};
-			name = Debug;
-		};
-		7DF5625719E5FAC700981300 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MangaCoverTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MangaCover.app/Contents/MacOS/MangaCover";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -458,14 +340,7 @@
 				7DF5625419E5FAC700981300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		7DF5625519E5FAC700981300 /* Build configuration list for PBXNativeTarget "MangaCoverTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7DF5625619E5FAC700981300 /* Debug */,
-				7DF5625719E5FAC700981300 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

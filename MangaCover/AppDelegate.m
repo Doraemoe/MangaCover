@@ -11,14 +11,19 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+
 @end
 
 @implementation AppDelegate
+
 
 NSSize kSize = {512, 512};
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    NSNumberFormatter *formatter = [number formatter];
+    [formatter setMaximum:[NSNumber numberWithInt:999]];
+    page = 0;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -27,6 +32,25 @@ NSSize kSize = {512, 512};
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
     return YES;
+}
+
+- (void)controlTextDidChange:(NSNotification *)obj {
+    if ([number intValue] == 0) {
+        [number setIntValue:1];
+    }
+    int remain = [number intValue] % 10;
+    if (remain == 1) {
+        [ordinal setStringValue:@"st image as cover"];
+    }
+    else if (remain == 2) {
+        [ordinal setStringValue:@"nd image as cover"];
+    }
+    else if (remain == 3) {
+        [ordinal setStringValue:@"rd image as cover"];
+    }
+    else {
+        [ordinal setStringValue:@"th image as cover"];
+    }
 }
 
 - (void) start {
@@ -90,7 +114,7 @@ NSSize kSize = {512, 512};
     //NSLog(@"%@",marray[0]);
     
     for (int i = 0; i < [archive numberOfEntries]; ++i) {
-        if ([[archive nameOfEntry:i] isEqualToString:marray[0]]) {
+        if ([[archive nameOfEntry:i] isEqualToString:marray[page]]) {
             data = [archive contentsOfEntry:i];
             break;
         }
@@ -112,6 +136,17 @@ NSSize kSize = {512, 512};
         }
     }
     [self stop];
+}
+
+- (IBAction)openPref:(id)sender {
+    [NSApp beginSheet:prefWindow modalForWindow:_window modalDelegate:self didEndSelector:nil contextInfo:nil];
+}
+
+- (IBAction)endPref:(id)sender {
+    //NSLog(@"%i", [number intValue]);
+    page = [number intValue] - 1;
+    [NSApp endSheet:prefWindow];
+    [prefWindow orderOut:sender];
 }
 
 @end
