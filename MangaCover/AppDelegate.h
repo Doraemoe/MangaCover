@@ -20,7 +20,6 @@
 @property (weak) IBOutlet NSWindow *prefWindow;
 @property int page;
 
-
 - (void) addCover: (NSArray *) files;
 - (IBAction)openPref:(id)sender;
 - (IBAction)endPref:(id)sender;
