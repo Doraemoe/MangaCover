@@ -9,9 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "AppDelegate.h"
 
-@interface DropView : NSImageView {
-    IBOutlet AppDelegate *ctrl;
-}
+@interface DropView : NSImageView
+
+@property AppDelegate *ctrl;
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 

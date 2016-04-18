@@ -21,9 +21,12 @@ NSSize kSize = {512, 512};
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    NSNumberFormatter *formatter = [number formatter];
+    NSNumberFormatter *formatter = [_number formatter];
     [formatter setMaximum:[NSNumber numberWithInt:999]];
-    page = 0;
+    _page = 0;
+    [_ind startAnimation:nil];
+    [_ind stopAnimation:nil];
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -35,69 +38,40 @@ NSSize kSize = {512, 512};
 }
 
 - (void)controlTextDidChange:(NSNotification *)obj {
-    if ([number intValue] == 0) {
-        [number setIntValue:1];
+    if ([_number intValue] == 0) {
+        [_number setIntValue:1];
     }
-    int remain = [number intValue] % 10;
+    int remain = [_number intValue] % 10;
     if (remain == 1) {
-        [ordinal setStringValue:@"st image as cover"];
+        [_ordinal setStringValue:@"st image as cover"];
     }
     else if (remain == 2) {
-        [ordinal setStringValue:@"nd image as cover"];
+        [_ordinal setStringValue:@"nd image as cover"];
     }
     else if (remain == 3) {
-        [ordinal setStringValue:@"rd image as cover"];
+        [_ordinal setStringValue:@"rd image as cover"];
     }
     else {
-        [ordinal setStringValue:@"th image as cover"];
+        [_ordinal setStringValue:@"th image as cover"];
     }
 }
 
 - (void) start {
-    [dropper setHidden:YES];
-    [ind setHidden:NO];
-    [ind startAnimation:nil];
-    [label setStringValue:@"Setting Cover Icon"];
+    [_dropper setHidden:YES];
+    [_ind startAnimation:nil];
+    [_label setStringValue:@"Setting Cover Icon"];
 }
 
 - (void) stop {
-    [ind stopAnimation:nil];
-    [ind setHidden:YES];
-    [dropper setHidden:NO];
-    [label setStringValue:@"Drag files here to add cover icon"];
+    [_ind stopAnimation:nil];
+    [_dropper setHidden:NO];
+    [_label setStringValue:@"Drag files here to add cover icon"];
 }
 
 - (void) addCover:(NSArray *)files {
     [self performSelectorInBackground:@selector(addCoverForFiles:) withObject:files];
 }
-/*
-- (void) addZipCoverForFile:(NSString *)file {
-    //NSLog(@"%@", file);
-    ZZArchive *archive = [ZZArchive archiveWithURL:[NSURL fileURLWithPath:file] error:nil];
-    NSMutableArray *marray = [[NSMutableArray alloc] init];
-    NSData *data = nil;
-    
-    for (ZZArchiveEntry *entry in archive.entries) {
-        if (!(entry.fileMode & S_IFDIR)) {
-            [marray addObject:[entry fileName]];
-            //NSLog(@"%@", [entry fileName]);
-        }
-    }
-    
-    [marray sortUsingSelector:@selector(compare:)];
-    
-    for (ZZArchiveEntry *entry in archive.entries) {
-        if ([entry.fileName isEqualToString:marray[0]]) {
-            data = [entry newDataWithError:nil];
-            break;
-        }
-    }
-    
-    NSImage *img = [[NSImage alloc] initWithData:data];
-    img = [img imageByScalingProportionallyToSize:kSize];
-    [[NSWorkspace sharedWorkspace] setIcon:img forFile:file options:0];
-}
-*/
+
 - (void) addCoverForFile:(NSString *)file {
     
     XADArchive *archive = [XADArchive archiveForFile:file];
@@ -112,12 +86,12 @@ NSSize kSize = {512, 512};
     
     [marray sortUsingSelector:@selector(caseInsensitiveCompare:)];
     //NSLog(@"%@",marray[0]);
-    if (page >= [marray count]) {
-        page = (int)[marray count] - 1;
+    if (_page >= [marray count]) {
+        _page = (int)[marray count] - 1;
     }
     
     for (int i = 0; i < [archive numberOfEntries]; ++i) {
-        if ([[archive nameOfEntry:i] isEqualToString:marray[page]]) {
+        if ([[archive nameOfEntry:i] isEqualToString:marray[_page]]) {
             data = [archive contentsOfEntry:i];
             break;
         }
@@ -129,7 +103,8 @@ NSSize kSize = {512, 512};
 }
 
 - (void) addCoverForFiles:(NSArray *)files {
-    [self start];
+ //   [self start];
+    [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:YES];
     
     for (NSString *file in files) {
         //NSLog(@"%@", file);
@@ -138,18 +113,20 @@ NSSize kSize = {512, 512};
             [self addCoverForFile:file];
         }
     }
-    [self stop];
+  //  [self stop];
+    [self performSelectorOnMainThread:@selector(stop) withObject:nil waitUntilDone:YES];
+
 }
 
 - (IBAction)openPref:(id)sender {
-    [NSApp beginSheet:prefWindow modalForWindow:_window modalDelegate:self didEndSelector:nil contextInfo:nil];
+    [NSApp beginSheet:_prefWindow modalForWindow:_window modalDelegate:self didEndSelector:nil contextInfo:nil];
 }
 
 - (IBAction)endPref:(id)sender {
     //NSLog(@"%i", [number intValue]);
-    page = [number intValue] - 1;
-    [NSApp endSheet:prefWindow];
-    [prefWindow orderOut:sender];
+    _page = [_number intValue] - 1;
+    [NSApp endSheet:_prefWindow];
+    [_prefWindow orderOut:sender];
 }
 
 @end

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -14,7 +15,6 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="dropper" destination="aVl-di-eza" id="4Xg-Um-tIf"/>
-                <outlet property="gear" destination="e9R-hM-zBR" id="fG7-Te-hVw"/>
                 <outlet property="ind" destination="t7T-hX-sic" id="khL-kj-15O"/>
                 <outlet property="label" destination="SjI-pb-9fA" id="AQt-X7-mqB"/>
                 <outlet property="number" destination="8nj-eS-RC0" id="beV-jV-Mlq"/>
@@ -76,33 +76,26 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="358" height="137"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="358" height="137"/>
             <value key="maxSize" type="size" width="358" height="137"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="358" height="137"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="t7T-hX-sic">
+                        <rect key="frame" x="163" y="62" width="32" height="32"/>
+                    </progressIndicator>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SjI-pb-9fA">
-                        <rect key="frame" x="18" y="8" width="322" height="22"/>
+                        <rect key="frame" x="42" y="8" width="269" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Drag files here to add cover icon" id="nQ4-aN-1SR">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVl-di-eza" customClass="DropView">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="157"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="dropper" id="PtT-4I-nhp"/>
-                        <connections>
-                            <outlet property="ctrl" destination="Voe-Tx-rLC" id="eP8-wu-K76"/>
-                        </connections>
-                    </imageView>
-                    <progressIndicator hidden="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="t7T-hX-sic">
-                        <rect key="frame" x="163" y="62" width="32" height="32"/>
-                    </progressIndicator>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-hM-zBR">
-                        <rect key="frame" x="322" y="9" width="27" height="21"/>
+                        <rect key="frame" x="317" y="9" width="27" height="21"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="gear" imagePosition="only" alignment="center" id="u5N-Yg-mBU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -111,15 +104,22 @@
                             <action selector="openPref:" target="Voe-Tx-rLC" id="Uxb-FG-Wbr"/>
                         </connections>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVl-di-eza" customClass="DropView">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="157"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="dropper" id="PtT-4I-nhp"/>
+                        <connections>
+                            <outlet property="ctrl" destination="Voe-Tx-rLC" id="eP8-wu-K76"/>
+                        </connections>
+                    </imageView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="160" y="555.5"/>
+            <point key="canvasLocation" x="148" y="304.5"/>
         </window>
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="CBX-Ww-APd">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="131" y="159" width="228" height="80"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="228" height="80"/>
             <value key="maxSize" type="size" width="228" height="80"/>
             <view key="contentView" id="StE-xL-QEb">
@@ -169,7 +169,7 @@ DQ
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="185" y="304"/>
+            <point key="canvasLocation" x="135" y="86"/>
         </window>
     </objects>
     <resources>

@@ -9,16 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import <XADMaster/XADArchive.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
-    IBOutlet NSImageView *dropper;
-    IBOutlet NSTextField *label;
-    IBOutlet NSProgressIndicator *ind;
-    IBOutlet NSTextField *number;
-    IBOutlet NSTextField *ordinal;
-    IBOutlet NSMenuItem *pref;
-    IBOutlet NSWindow *prefWindow;
-    int page;
-}
+@interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (weak) IBOutlet NSImageView *dropper;
+@property (weak) IBOutlet NSTextField *label;
+@property (weak) IBOutlet NSProgressIndicator *ind;
+@property (weak) IBOutlet NSTextField *number;
+@property (weak) IBOutlet NSTextField *ordinal;
+@property (weak) IBOutlet NSMenuItem *pref;
+@property (weak) IBOutlet NSWindow *prefWindow;
+@property int page;
+
 
 - (void) addCover: (NSArray *) files;
 - (IBAction)openPref:(id)sender;

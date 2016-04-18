@@ -46,7 +46,7 @@
     if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
         
-        [ctrl addCover:files];
+        [_ctrl addCover:files];
     }
     
     return YES;
